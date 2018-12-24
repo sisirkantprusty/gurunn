@@ -2,8 +2,11 @@ package testcases;
 
 import org.testng.annotations.Test;
 
-public class TC_VerifyTitleAndSortProducts {
+import base.TestBase;
+
+public class TC_VerifyTitleAndSortProducts extends TestBase{
   @Test
   public void f() {
+	  System.out.println("this is test");
   }
 }

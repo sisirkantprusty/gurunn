@@ -12,7 +12,7 @@ import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.ui.Select;
 
 public class Guru99HomePage extends pageObjectBase {
-	Guru99ProductListPage guruProdList;
+	//Guru99ProductListPage guruProdList;
 
 	public Guru99HomePage(WebDriver dr) {
 		super(dr);

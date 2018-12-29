@@ -3,7 +3,8 @@
 <suite name="Suite">
   <test thread-count="5" name="gurunntest">
     <classes>
-      <class name="testcases.TC_VerifyTitleAndSortProducts"/>
+     <class name="testcases.TC_VerifyTitleAndSortProducts"/> 
+      <class name="testcases.TC_VerifyPriceOfProductInPdpPage"/>
     </classes>
   </test> <!-- gurunntest -->
 </suite> <!-- Suite -->

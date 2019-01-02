@@ -50,9 +50,21 @@ public class Guru99HomePage extends pageObjectBase {
 
 	@FindBy(xpath = "//p[@class='special-price']//span[@class='price']")
 	protected WebElement specialPriceInProdListPage;
-	
-	@FindBy(id="product-collection-image-1")
+
+	@FindBy(id = "product-collection-image-1")
 	protected WebElement firstItemInList;
+
+	@FindBy(xpath = "//div[@class='category-products']//li[1]//li[2]")
+	protected WebElement lnkFirstPhone;
+
+	@FindBy(xpath = "//div[@class='category-products']//li[2]//li[2]")
+	protected WebElement lnkSecondPhone;
+
+	@FindBy(xpath = "//li[@class='success-msg']")
+	protected WebElement lblSuccessMessage;
+
+	@FindBy(xpath = "//button[@title='Compare']")
+	protected WebElement btnCompare;
 
 	public void clickMobile() {
 		linkMobile.click();
@@ -133,8 +145,25 @@ public class Guru99HomePage extends pageObjectBase {
 		}
 		return flag;
 	}
-	
-	public void clickFirstItemOnList(){
+
+	public void clickFirstItemOnList() {
 		firstItemInList.click();
+	}
+
+	public void clickFirstPhone() {
+		lnkFirstPhone.click();
+	}
+
+	public void clickSecondPhone() {
+		lnkSecondPhone.click();
+	}
+
+	public String getPhoneName() {
+		String msg = lblSuccessMessage.getText().toString();
+		return msg;
+	}
+
+	public void clickCompare() {
+		btnCompare.click();
 	}
 }

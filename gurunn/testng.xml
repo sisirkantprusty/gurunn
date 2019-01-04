@@ -2,10 +2,17 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
   <test thread-count="5" name="gurunntest">
+  <groups>
+    <run>
+      <include name="shoppingcart"/>
+    </run>
+  </groups>
+
     <classes>
       <class name="testcases.TC_VerifyTitleAndSortProducts"/> 
       <class name="testcases.TC_VerifyPriceOfProductInPdpPage"/>
       <class name="testcases.TC_VerifyLimitOfShoppingCart"/>
+      <class name="testcases.TC_VerifyComparisionOfFirstTwoPhones"/>
     </classes>
   </test> <!-- gurunntest -->
 </suite> <!-- Suite -->

@@ -10,7 +10,7 @@ public class TC_VerifyTitleAndSortProducts extends TestBase {
 
 	Guru99HomePage guruHome;
 
-	@Test
+	@Test(groups = "productlist")
 	public void verifyTitleAndSortProducts() throws InterruptedException {
 		guruHome = new Guru99HomePage(dr);
 		System.out.println("this is test");

@@ -1,2 +1,15 @@
 https://www.pluralsight.com/guides/getting-started-with-page-object-pattern-for-your-selenium-tests
 https://github.com/kschiller/page-object-pattern-tutorial
+
+
+How to read the project and test cases 
+
+- Automation framework follows the Page object model design pattern and uses TestNG to create test cases.
+- Chromedriver is in src/test/resources
+- config.properties file stores the url  
+
+
+
+##Incase test groups are used for test methods
+example groups is used for test method then to make sure beforeMethod and afterMethod to run use alwaysRun=true
+@Test(description = "Test case to verify that user can not add more than Product available in the store", groups = {"shoppingcart"}), then have this @BeforeMethod(alwaysRun=true)

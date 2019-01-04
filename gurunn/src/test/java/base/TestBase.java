@@ -1,34 +1,46 @@
 package base;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 
 public class TestBase {
-	public static WebDriver dr ;
+	public static WebDriver dr;
+	Properties configFile = new Properties();
+	InputStream inputFile = null;
 
-	@BeforeMethod
-	public void initializeTest() throws InterruptedException {
+	@BeforeMethod(alwaysRun=true)
+	public void initializeTest() throws InterruptedException, IOException {
+		String testUrl = null;
+
+		// Read Properties file
+
+		inputFile = new FileInputStream(
+				System.getProperty("user.dir") + "\\src\\test\\resources\\configFiles\\config.properties");
+		configFile.load(inputFile);
+		testUrl = configFile.getProperty("URL").toString();
 		System.out.println("Open the browser: " + "\n");
 		System.setProperty("webdriver.chrome.driver",
 				System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver\\chromedriver.exe");
 		dr = new ChromeDriver();
 		System.out.println("Chrome driver initialized");
-		dr.get("http://live.guru99.com/");
+		dr.get(testUrl);
 		Thread.sleep(3000);
 		dr.manage().window().maximize();
 
 	}
 
-	@AfterMethod
-	public void tearDownTest() {
+	@AfterMethod (alwaysRun=true)
+	public void tearDownTest() throws IOException {
 		dr.close();
 		System.out.println("Driver is closed");
+		inputFile.close();
 	}
 
 }

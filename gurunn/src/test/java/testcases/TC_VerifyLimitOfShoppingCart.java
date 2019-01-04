@@ -12,7 +12,7 @@ public class TC_VerifyLimitOfShoppingCart extends TestBase {
 	Guru99HomePage guruHome;
 	Guru99ProductListPage guruProdList;
 
-	@Test (description="Test case to verify that user can not add more than Product available in the store")
+	@Test(description = "Test case to verify that user can not add more than Product available in the store", groups = {"shoppingcart"})
 	public void verifyLimitOfShoppingCart() throws InterruptedException {
 		guruHome = new Guru99HomePage(dr);
 		guruProdList = new Guru99ProductListPage(dr);
@@ -26,6 +26,7 @@ public class TC_VerifyLimitOfShoppingCart extends TestBase {
 				"The message - The maximum quantity allowed for purchase is 500 - does not appear");
 		guruProdList.clickLinkCart();
 		Thread.sleep(500);
-		Assert.assertTrue(guruProdList.verifyEmptyCartMessage("You have no items in your shopping cart."), "Cart is not empty");		
+		Assert.assertTrue(guruProdList.verifyEmptyCartMessage("You have no items in your shopping cart."),
+				"Cart is not empty");
 	}
 }

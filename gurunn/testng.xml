@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
+	<listeners>
+        <listener class-name="utilities.RetryListener"/>
+  </listeners>
   <test thread-count="5" name="gurunntest">
-  <groups>
+  <!-- <groups>
     <run>
       <include name="shoppingcart"/>
     </run>
-  </groups>
+  </groups> -->
 
     <classes>
       <class name="testcases.TC_VerifyTitleAndSortProducts"/> 

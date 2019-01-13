@@ -3,6 +3,8 @@
 <suite name="Suite">
 	<listeners>
         <listener class-name="utilities.RetryListener"/>
+        <listener class-name="utilities.TakeScreenShotOnFailure"/>
+        
   </listeners>
   <test thread-count="5" name="gurunntest">
   <!-- <groups>
@@ -12,10 +14,11 @@
   </groups> -->
 
     <classes>
-      <class name="testcases.TC_VerifyTitleAndSortProducts"/> 
+      <!-- <class name="testcases.TC_VerifyTitleAndSortProducts"/> 
       <class name="testcases.TC_VerifyPriceOfProductInPdpPage"/>
-      <class name="testcases.TC_VerifyLimitOfShoppingCart"/>
-      <class name="testcases.TC_VerifyComparisionOfFirstTwoPhones"/>
+      <class name="testcases.TC_VerifyComparisionOfFirstTwoPhones"/> -->
+      
+       <class name="testcases.TC_VerifyLimitOfShoppingCart"/>
     </classes>
   </test> <!-- gurunntest -->
 </suite> <!-- Suite -->

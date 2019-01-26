@@ -2,23 +2,29 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 	<listeners>
-        <listener class-name="utilities.RetryListener"/>
-        <listener class-name="utilities.TakeScreenShotOnFailure"/>
-        
-  </listeners>
-  <test thread-count="5" name="gurunntest">
-  <!-- <groups>
-    <run>
-      <include name="shoppingcart"/>
-    </run>
-  </groups> -->
+		<listener class-name="utilities.RetryListener" />
+		<listener class-name="utilities.TakeScreenShotOnFailure" />
+	</listeners>
 
-    <classes>
-      <!-- <class name="testcases.TC_VerifyTitleAndSortProducts"/> 
-      <class name="testcases.TC_VerifyPriceOfProductInPdpPage"/>
-      <class name="testcases.TC_VerifyComparisionOfFirstTwoPhones"/> -->
-      
-       <class name="testcases.TC_VerifyLimitOfShoppingCart"/>
-    </classes>
-  </test> <!-- gurunntest -->
+	<test name="gurunntestchrome">
+		<parameter name="browser" value="Chrome" />
+		<classes>
+			<class name="testcases.TC_VerifyTitleAndSortProducts" />
+			<class name="testcases.TC_VerifyPriceOfProductInPdpPage" />
+			<class name="testcases.TC_VerifyComparisionOfFirstTwoPhones" />
+			<class name="testcases.TC_VerifyLimitOfShoppingCart" />
+		</classes>
+	</test>
+
+	<test name="gurunntestfirefox">
+		<parameter name="browser" value="Firefox" />
+
+		<classes>
+			<class name="testcases.TC_VerifyTitleAndSortProducts" />
+			<class name="testcases.TC_VerifyPriceOfProductInPdpPage" />
+			<class name="testcases.TC_VerifyComparisionOfFirstTwoPhones" />
+			<class name="testcases.TC_VerifyLimitOfShoppingCart" />
+		</classes>
+	</test> <!-- gurunntest -->
+
 </suite> <!-- Suite -->

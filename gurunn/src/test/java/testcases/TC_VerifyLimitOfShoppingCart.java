@@ -22,7 +22,7 @@ public class TC_VerifyLimitOfShoppingCart extends TestBase {
 		guruProdList.enterQuantity(1000);
 		guruProdList.submitAddtoCart();
 		Thread.sleep(1000);
-		Assert.assertTrue(!guruProdList.verifyMessage("The maximum quantity allowed for purchase is 500"),
+		Assert.assertTrue(guruProdList.verifyMessage("The maximum quantity allowed for purchase is 500"),
 				"The message - The maximum quantity allowed for purchase is 500 - does not appear");
 		guruProdList.clickLinkCart();
 		Thread.sleep(500);

@@ -13,3 +13,7 @@ How to read the project and test cases
 ##Incase test groups are used for test methods
 example groups is used for test method then to make sure beforeMethod and afterMethod to run use alwaysRun=true
 @Test(description = "Test case to verify that user can not add more than Product available in the store", groups = {"shoppingcart"}), then have this @BeforeMethod(alwaysRun=true)
+
+
+This project has not used any implicit or explicit waiting. This is just a demo project which uses Thread.sleep judiciously. 
+

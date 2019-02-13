@@ -10,8 +10,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
@@ -29,18 +31,24 @@ public class TestBase {
 	protected static ExtentTest logger;
 	protected static ExtentHtmlReporter reporter;
 
-	@Parameters ({"browser"})
-	@BeforeTest (alwaysRun = true)
-	public void setUpForTest(String browser) {
+	@BeforeSuite (alwaysRun = true)
+	public void setUpForTestSuite() {
 		reporter = new ExtentHtmlReporter(
 				System.getProperty("user.dir") + "\\Reports\\learnauto.html");
 		extent = new ExtentReports();
 		extent.attachReporter(reporter);
-		extent.setSystemInfo("Browser", browser);
+		
 		//logger= extent.createTest("SAMPLE TEST REPORT");
 	}
 	
-	@AfterTest (alwaysRun=true)
+	@Parameters ({"browser"})
+	@BeforeTest (alwaysRun = true)
+	public void setUpForTest(String browser){
+		extent.setSystemInfo("Browser", browser);
+	}
+
+	
+	@AfterSuite (alwaysRun=true)
 	public void tearDownForTest()
 	{
 		extent.flush();
@@ -49,6 +57,7 @@ public class TestBase {
 	@BeforeMethod(alwaysRun = true)
 	@Parameters("browser")
 	public void initializeTest(String browser) throws InterruptedException, IOException {
+		
 		String testUrl = null;
 		// Read Properties file
 		inputFile = new FileInputStream(

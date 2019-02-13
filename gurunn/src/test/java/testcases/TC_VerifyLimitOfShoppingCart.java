@@ -14,6 +14,9 @@ public class TC_VerifyLimitOfShoppingCart extends TestBase {
 
 	@Test(description = "Test case to verify that user can not add more than Product available in the store", groups = {"shoppingcart"})
 	public void verifyLimitOfShoppingCart() throws InterruptedException {
+		
+		logger = extent.createTest("Verify limit of articles in shopping cart");
+		
 		guruHome = new Guru99HomePage(dr);
 		guruProdList = new Guru99ProductListPage(dr);
 		guruHome.clickMobile();

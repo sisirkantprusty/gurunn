@@ -13,6 +13,7 @@ public class TC_VerifyPriceOfProductInPdpPage extends TestBase {
 
 	@Test(groups = "productlist")
 	public void VerifyPriceOfProductInPdpPage() throws InterruptedException {
+		logger = extent.createTest("Verify Price of Product in PDP");
 		guruHome = new Guru99HomePage(dr);
 		guruProdList = new Guru99ProductListPage(dr);
 		guruHome.clickMobile();

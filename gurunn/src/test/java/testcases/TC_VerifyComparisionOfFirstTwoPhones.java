@@ -14,6 +14,7 @@ public class TC_VerifyComparisionOfFirstTwoPhones extends TestBase {
 	Guru99ComparePage guruComparePhones=null;
 	@Test
 	public void VerifyComparisionOfFirstTwoPhones() {
+		logger = extent.createTest("Verify Comparision of First 2 phones");
 		guruHome = new Guru99HomePage(dr);
 		util = new Utilities();
 		guruComparePhones= new Guru99ComparePage(dr);

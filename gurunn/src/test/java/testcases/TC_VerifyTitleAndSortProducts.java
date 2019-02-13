@@ -12,6 +12,8 @@ public class TC_VerifyTitleAndSortProducts extends TestBase {
 
 	@Test(groups = "productlist")
 	public void verifyTitleAndSortProducts() throws InterruptedException {
+		logger = extent.createTest("Verify Title And Sort Products");
+		
 		guruHome = new Guru99HomePage(dr);
 		System.out.println("this is test");
 		System.out.println(dr.getTitle());

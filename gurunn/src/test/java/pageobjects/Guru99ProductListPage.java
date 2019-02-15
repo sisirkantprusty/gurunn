@@ -34,10 +34,7 @@ public class Guru99ProductListPage extends pageObjectBase {
 	
 	
 	@FindBy(xpath = "//span[@class='label'][contains(text(),'Cart')]")
-	protected WebElement lnkCart;
-	
-
-	
+	protected WebElement lnkCart;	
 
 	public boolean isLableSpecialPriceAvailable() {
 		if (specialPrice.size() != 0)

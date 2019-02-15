@@ -59,14 +59,17 @@ public class TestBase {
 	@Parameters("browser")
 	public void initializeTest(String browser) throws InterruptedException, IOException {
 
-		String testUrl = null;
+		String testUrl, testHmUrl = null;
 		// Read Properties file
 		inputFile = new FileInputStream(
 				System.getProperty("user.dir") + "\\src\\test\\resources\\configFiles\\config.properties");
 		configFile.load(inputFile);
 		ProjectConstants.filePath = configFile.getProperty("SCREENSHOT_FILEPATH").toString();
 		System.out.println("FILE PATH " + ProjectConstants.filePath);
+
 		testUrl = configFile.getProperty("URL").toString();
+		testHmUrl = configFile.getProperty("HMURL").toString();
+
 		System.out.println("Open the browser: " + "\n");
 		if (browser.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver",
@@ -91,9 +94,11 @@ public class TestBase {
 			capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 			dr = new ChromeDriver(capabilities);
 		}
-		dr.get(testUrl);
+		if (browser.equalsIgnoreCase("mobileWeb"))
+			dr.get(testHmUrl);
+		else
+			dr.get(testUrl);
 		Thread.sleep(3000);
-		
 
 	}
 

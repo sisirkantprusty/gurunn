@@ -23,12 +23,12 @@ public class TakeScreenShotOnFailure implements ITestListener {
 
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
-
+		System.out.println("Test case " + result.getName() + " has started..");
 	}
 
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
-
+		System.out.println("Test case " + result.getName() + " has passed..");
 	}
 
 	public void onTestFailure(ITestResult result) {

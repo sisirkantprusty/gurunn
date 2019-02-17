@@ -31,10 +31,7 @@
 		<parameter name="browser" value="mobileWeb" />
 
 		<classes>
-			<class name="testcases.TC_VerifyTitleAndSortProducts" />
-			<class name="testcases.TC_VerifyPriceOfProductInPdpPage" />
-			<class name="testcases.TC_VerifyComparisionOfFirstTwoPhones" />
-			<class name="testcases.TC_VerifyLimitOfShoppingCart" />
+			<class name="testcases.TC_ShoppingBag" />
 		</classes>
 	</test>
 

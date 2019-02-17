@@ -107,6 +107,7 @@ public class TestBase {
 
 		if (browser.equalsIgnoreCase("mobileWeb"))
 			dr.get(testHmUrl);
+			
 		else
 			dr.get(testUrl);
 		Thread.sleep(3000);

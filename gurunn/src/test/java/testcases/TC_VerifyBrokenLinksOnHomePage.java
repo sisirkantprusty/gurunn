@@ -11,7 +11,7 @@ import pageobjects.Guru99HomePage;
 
 public class TC_VerifyBrokenLinksOnHomePage extends TestBase {
 	Guru99HomePage guru99HomePage;
-	String[] linksOnGuru99HomePage;
+	String[] linksOnGuru99HomePage = null;
 	SoftAssert softAssert;
 
 	public void verifyLinkActive(String[] linkUrls) {
@@ -37,7 +37,6 @@ public class TC_VerifyBrokenLinksOnHomePage extends TestBase {
 		} catch (Exception e) {
 
 		}
-
 	}
 
 	@Test

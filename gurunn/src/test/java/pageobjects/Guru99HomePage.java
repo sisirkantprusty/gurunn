@@ -44,6 +44,9 @@ public class Guru99HomePage extends pageObjectBase {
 	 * initElements method will create all WebElements
 	 * PageFactory.initElements(driver, this); }
 	 */
+	
+	
+	
 
 	// Following is used to find the elements which is stored in specialPrice
 	@FindBys({ @FindBy(xpath = "//span[contains(text(),'Special Price')]") })
@@ -69,6 +72,10 @@ public class Guru99HomePage extends pageObjectBase {
 
 	@FindBy(xpath = "//button[@title='Compare']")
 	protected WebElement btnCompare;
+	
+	public WebElement webElemementLinkMobile(){
+		return linkMobile;
+	}
 
 	public void clickMobile() {
 		linkMobile.click();

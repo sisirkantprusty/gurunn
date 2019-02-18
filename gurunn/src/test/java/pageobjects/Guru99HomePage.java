@@ -172,8 +172,10 @@ public class Guru99HomePage extends pageObjectBase {
 	}
 
 	public String[] getLinksOnHomePage() {
+		linksOnGuru99HomePage = new String [linksOnHomePage.size()];
 		for (int i = 0; i < linksOnHomePage.size(); i++) {
 			WebElement ele = linksOnHomePage.get(i);
+			//System.out.println(ele.getAttribute("href"));
 			linksOnGuru99HomePage[i] = ele.getAttribute("href");
 		}
 		return linksOnGuru99HomePage;

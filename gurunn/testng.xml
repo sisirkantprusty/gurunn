@@ -9,14 +9,16 @@
 	<test name="gurunntestchrome">
 		<parameter name="browser" value="Chrome" />
 		<classes>
-			<class name="testcases.TC_VerifyTitleAndSortProducts" />
+<!-- 			<class name="testcases.TC_VerifyTitleAndSortProducts" />
 			<class name="testcases.TC_VerifyPriceOfProductInPdpPage" />
 			<class name="testcases.TC_VerifyComparisionOfFirstTwoPhones" />
-			<class name="testcases.TC_VerifyLimitOfShoppingCart" />
+			<class name="testcases.TC_VerifyLimitOfShoppingCart" /> -->
+			<class name="testcases.TC_VerifyBrokenLinksOnHomePage" />
+			
 		</classes>
 	</test>
 
-	<test name="gurunntestfirefox">
+	<!-- <test name="gurunntestfirefox">
 		<parameter name="browser" value="Firefox" />
 
 		<classes>
@@ -25,7 +27,7 @@
 			<class name="testcases.TC_VerifyComparisionOfFirstTwoPhones" />
 			<class name="testcases.TC_VerifyLimitOfShoppingCart" />
 		</classes>
-	</test> <!-- gurunntest -->
+	</test> gurunntest
 	
 	<test name="gurunntestMobileWeb">
 		<parameter name="browser" value="mobileWeb" />
@@ -33,6 +35,6 @@
 		<classes>
 			<class name="testcases.TC_ShoppingBag" />
 		</classes>
-	</test>
+	</test> -->
 
 </suite> <!-- Suite -->

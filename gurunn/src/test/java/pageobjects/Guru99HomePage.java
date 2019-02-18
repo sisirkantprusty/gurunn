@@ -23,6 +23,10 @@ public class Guru99HomePage extends pageObjectBase {
 	boolean flag = false;
 	WebElement productName, productPrice;
 	String prodPrice;
+	String[] linksOnGuru99HomePage = null;
+
+	@FindBys({ @FindBy(tagName = "a") })
+	protected List<WebElement> linksOnHomePage;
 
 	@FindBy(xpath = "//a[contains(text(),'Mobile')]")
 	private WebElement linkMobile;
@@ -166,4 +170,13 @@ public class Guru99HomePage extends pageObjectBase {
 	public void clickCompare() {
 		btnCompare.click();
 	}
+
+	public String[] getLinksOnHomePage() {
+		for (int i = 0; i < linksOnHomePage.size(); i++) {
+			WebElement ele = linksOnHomePage.get(i);
+			linksOnGuru99HomePage[i] = ele.getAttribute("href");
+		}
+		return linksOnGuru99HomePage;
+	}
+
 }
